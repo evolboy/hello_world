@@ -18,5 +18,35 @@ hint:
 hint: See "git help submodule" for more information.
 
 尝试使用submodule：
+注意每个命令的顺序，很重要，可以参考（ttps://blog.csdn.net/wwj_748/article/details/73991862）
+# 首先在主模块添加子模块，可以重命名
 git submodule add git@github.com:evolboy/mygit.git sub-mygit
+# 使用git status查看修改
+git add .getmodules sub-mygit
+git commit -m "add submodule."
+git submodule init
+# 到这里你成功添加了一个submodule
+# 
+# 接下来可以进入你的submodule中修改代码并使用git的正常命令操作
+# add / commit / pull / push
+# 等待submodule完成push操作后，提交submodule的内容到远程
+# 这里才已经成功修改了submodule
+#
+# 提交后，看下Submodule在主工程中的变更
+cd ..
+git status
+# 提交主工程的变更
+git add .
+git commit -m "update android submodule"
+git push
+# 这里已经成功修改了submodule.
+# 
+# 其他同学想更新
+# 在主工程根目录运行以下命令
+git submodule foreach git pull
+# 还需要更新下submodule
+cd sub-mygit
+git pull
+# 这样其他团队成员就能拉到最新的工程代码啦
+
 
