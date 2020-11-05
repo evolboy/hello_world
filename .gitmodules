@@ -1,0 +1,3 @@
+[submodule "sub-mygit"]
+	path = sub-mygit
+	url = git@github.com:evolboy/mygit.git

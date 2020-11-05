@@ -1,0 +1,22 @@
+参考：https://www.jianshu.com/p/e27a978ddb88
+
+如果不使用submodule，git会提示(并且提交到远端的代码没有子git内容)：
+$ git add .
+warning: adding embedded git repository: mygit
+hint: You've added another git repository inside your current repository.
+hint: Clones of the outer repository will not contain the contents of
+hint: the embedded repository and will not know how to obtain it.
+hint: If you meant to add a submodule, use:
+hint:
+hint:   git submodule add <url> mygit
+hint:
+hint: If you added this path by mistake, you can remove it from the
+hint: index with:
+hint:
+hint:   git rm --cached mygit
+hint:
+hint: See "git help submodule" for more information.
+
+尝试使用submodule：
+git submodule add git@github.com:evolboy/mygit.git sub-mygit
+
